@@ -1,0 +1,47 @@
+---
+title: "intro"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{intro}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(blockchainR)
+```
+
+Initialization of the chain 
+
+```{r}
+chain <- blockchainR::blockchain$new()
+```
+
+```{r}
+chain$print_chain()
+```
+
+```{r}
+chain$generate_key("private.pem","public.pem")
+```
+
+
+```{r}
+chain$new_transaction("private.pem","someone",30)
+chain$transaction_queue
+
+chain$new_block()$add_block()$chain_validation()
+
+```
+
+```{r}
+chain$balances()
+```
+

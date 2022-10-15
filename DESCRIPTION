@@ -14,3 +14,7 @@ Imports:
     dplyr,
     openssl,
     R6
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
